@@ -68,7 +68,9 @@ public:
         notify();
     }
 
-    virtual ~IProduct() = default;
+    virtual ~IProduct() {
+        StopSales();
+    }
 
     void notify() {
         for (auto shop: shops) {
